@@ -3,39 +3,43 @@
 
 {% block title %}h4sski Home page{% endblock %}
 
-{% block active_home %}{% endblock %}
-{% block active_link %}active{% endblock %}
+{% block active_home %}active{% endblock %}
+{% block active_link %}{% endblock %}
 
 {% block content %}
 
-<div
-    class="row justify-content-center align-items-center g-2"
->
-    <div class="col">
-        <div class="card text-start">
-            <div class="card-body">
-                <div class="row">
-                    <h4 class="card-title col">Senior Mechanical Engineer</h4>
-                    <img class="card-img-top col" src="https://creadis.com/wp-content/uploads/2023/04/0_logo_black.png" alt="Creadis" />
+<div class="row">
+
+    <div class="col col-2 mb-2">
+        <div class="card h-100">
+        <div class="card-body">
+            <h4 class="card-title">Experience</h4>
+        </div></div>
+    </div>
+    <div class="col col">
+    {% for card in cards %}
+
+    <div class="card mb-2">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h4 class="card-title">{{ card.role }}</h4>
+                    <p class="">{{ card.company_name }}</p>
                 </div>
-                <p class="card-text">Body</p>
+                <img class="card-img-top col-auto" style="height: 60px; width: auto;" src="{{ card.img_link }}" alt="{{ card.company_name }}" />
+            </div>
+            <div class="card-text">
+                <a>{{ card.duration }}</a><br>
+                <a>{{ card.start_date }} ~ {{ card.end_date }}</a>
+                <div class="card-text">
+                    <p>{{ card.description | linebreaks }}</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col">
-        <div class="card text-start">
-            <img class="card-img-top" src="holder.js/100px180/" alt="Title" />
-            <div class="card-body">
-                <h4 class="card-title">Title</h4>
-                <p class="card-text">Body</p>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 </div>
-
-
-
-
 
 {% endblock %}
 
