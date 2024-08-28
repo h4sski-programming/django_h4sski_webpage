@@ -5,6 +5,21 @@ from django.views.generic import TemplateView
 class IndexView(TemplateView):
     template_name = 'index'
     
+    skills = [
+        {
+            'name': 'AutoCAD',
+            'level': 5,
+        },
+        {
+            'name': 'Excel',
+            'level': 5,
+        },
+        {
+            'name': 'MS Office',
+            'level': 4,
+        },
+    ]
+    
     cards = [
         {
             'img_link': 'https://creadis.com/wp-content/uploads/2023/04/0_logo_black.png',
@@ -22,13 +37,14 @@ class IndexView(TemplateView):
             'start_date': '2018 December',
             'end_date': '2022 April',
             'duration': '3 yrs 5 mos',
-            'description': "Consultant for Vestas as Engimeering Change Manager - Mechanical Team <ul><li>- reviewing ECR's, accept / reject / forward to other Team</li><li>- communicating and consulting with many specialist teams to provide the best solution</li></ul>",
+            'description': "Consultant for Vestas as Engimeering Change Manager - Mechanical Team \n- reviewing ECR's, accept / reject / forward to other Team\n- communicating and consulting with many specialist teams to provide the best solution",
         },
     ]
     
     context = {
         'nickname': 'h4sski',
         'cards': cards,
+        'skills': skills,
     }
     
     def get(self, request):
@@ -44,7 +60,7 @@ class SubView(TemplateView):
             'start_date': '2018 December',
             'end_date': '2022 April',
             'duration': '3 yrs 5 mos',
-            'description': "Consultant for Vestas as Engimeering Change Manager - Mechanical Team <ul><li>- reviewing ECR's, accept / reject / forward to other Team</li><li>- communicating and consulting with many specialist teams to provide the best solution</li></ul>",
+            'description': "Consultant for Vestas as Engimeering Change Manager - Mechanical Team \n- reviewing ECR's, accept / reject / forward to other Team\n- communicating and consulting with many specialist teams to provide the best solution",
         },
     ]
     
