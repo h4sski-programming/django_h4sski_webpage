@@ -36,12 +36,15 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link {% block active_home %}{% endblock %}" aria-current="page" href="{% url 'index' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% block active_link %}{% endblock %}" href="{% url 'sub' %}">Sub</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% block active_home %}{% endblock %}" aria-current="page" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% block active_home2 %}{% endblock %}" aria-current="page" href="{% url 'index2' %}">Home2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% block active_link %}{% endblock %}" href="{% url 'sub' %}">Sub</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -55,7 +58,7 @@
             {% endblock %}
             </div>
         </main>
-        <footer class="bg-secondary-subtle text-secondary-emphasis p-2">
+        <footer class="p-2">
             <!-- place footer here -->
             Coded by h4sski
         </footer>
