@@ -17,12 +17,43 @@
             <div class="card-body">
                 <h4 class="card-title">Who I am</h4>
                 <div class="">
-                    Description of myself
+                    <p>
+                        The consultant is a dedicated Mechanical Engineer. He has a strong knowledge of strength calculations, 3D modeling, the wind industry, and intermediate knowledge of programming. He is an experienced user of AutoCAD, SolidWorks, Plant3D, Navisworks, SAP, PTC Windchill, Jira, and Microsoft Office. The consultant has worked on projects for various industries. Oil and gas – where he mastered design skills and developed mechanical engineering knowledge. Glass production furnace designing – where he could use his skills of FEM calculations. Furniture design – where he had to be focused on details and precision of his designs to the highest level. Wind industry – where he got a ton of knowledge and tested himself in adapting to an industry-specific environment.
+                    </p>
+                    <p>
+                        <h6>Key skills:</h6>
+                        <ul>
+                            <li>Mechanical design knowledge gathered from many types of industries.</li>
+                            <li>Very fast learner – of new tools (software), new technologies, and processes.</li>
+                            <li>Work alone and within a team.</li>
+                            <li>Work on small and large-scale projects.</li>
+                        </ul>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<div class="row">
+
+    <div class="col mb-2">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">What am I capable to do?</h4>
+                {% for scope in delivery_scope %}
+                <div class="my-3 p-2 border-start border-top border-secondary">
+                    <h6 class="ms-5">{{ scope.title }}</h6>
+                    <div>{{ scope.description }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% for skill_type in skills %}
 <div class="row">
@@ -30,18 +61,18 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">{{ skill_type.name }}</h4>
-                <div class="row row-cols-1">
+                <div class="row row-cols-1 py-2">
                     {% for skill in skill_type.skills_list %}
                     <div class="col">
                         <div class="row ms-4">
                             <div class="col-auto">
                             {% for i in max_stars %}
                                 {% if i <= skill.level %}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="auto" style="margin-top: -0.5em" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
                                     <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                                 </svg>
                                 {% else %}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="auto" style="margin-top: -0.5em" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
                                     <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
                                 </svg>
                                 {% endif %}
